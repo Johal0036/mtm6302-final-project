@@ -12,3 +12,4 @@ fetch('https://api.nasa.gov/planetary/apod?api_key=5GG6dxfCUHvQ2nMGTX60QjmwkIszo
         const caption = document.getElementById("caption")
         caption.innerHTML = `<p>Title:</p> ${json.title}`
     })
+const DateTime = luxon.DateTime;
