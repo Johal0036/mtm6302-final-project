@@ -23,7 +23,6 @@ date.innerHTML = now.toFormat("DDDD")
 const time = document.getElementById("time")
 time.innerHTML = now.toLocaleString(DateTime.TIME_24_WITH_SHORT_OFFSET)
 
-
 const greetings = document.getElementById("greetings");
 const message = ["Hello. Good morning!", "Hi. Good afternoon!", "Good evening!"]
 
@@ -38,6 +37,54 @@ function greeting() {
 }
 greeting();
 
+/* let hours = now.hour
+let min = now.minute
+let sec = now.seconds
+
+function counting() {
+    sec += 1;
+    if (sec > 59) {
+        sec = 0
+        min += 1
+        if (min > 59) {
+            min = 0
+            hours += 1
+            if (hours > 23) {
+                hours = 0
+                min = 0
+                sec = 0
+            }
+        }
+    }
+    let dec = ''
+    if (hours < 10) {
+        dec = '0' + hours
+    } else {
+        dec = hours
+    }
+
+    if (min < 10) {
+        dec += ':0' + min
+    } else {
+        dec += ':' + min
+    }
+    if (sec > 10) {
+        dec += ':0' + sec
+    } else {
+        dec += ':' + sec
+    }
+
+    if (format === "complete") {
+        time.innerHTML = now.ToFormat('DDDD') + ' ' + '-' + ' ' + dec
+    } else {
+         time.innerHTML = dec;
+    }
+
+   
+    setInterval(counting, 1000);
+} */
+
+
 // Buttons for additional features
 const week = document.getElementById("button1")
 const month = document.getElementById("button2")
@@ -46,15 +93,18 @@ const result = document.getElementById("result")
 
 week.addEventListener("click", function (e) {
     e.preventDefault();
-    result.innerHTML = DateTime.local().weekdayLong;
+    result.style.display = "inline"
+    result.innerHTML = DateTime.local().weekdayLong
 })
 
 month.addEventListener("click", function (e) {
     e.preventDefault()
-    result.innerHTML = DateTime.local().day;
+    result.style.display = "inline"
+    result.innerHTML = DateTime.local().day
 })
 
 year.addEventListener("click", function (e) {
     e.preventDefault()
-    result.innerHTML = DateTime.local().ordinal;
+    result.style.display = "inline"
+    result.innerHTML = DateTime.local().ordinal
 })
